@@ -1,0 +1,87 @@
+﻿@model List<AutoClaim.Models.Employee>
+@{
+    ViewBag.Title = "ClaimOfficer";
+    Layout = "~/Views/Shared/_LayoutOfficer.cshtml";
+}
+<hr />
+<h2>Welcome ClaimOfficer</h2>
+<hr />
+<div class="navbar navbar-left">
+    <ul class="nav navbar-nav">
+        <li style="color:black">
+            <strong>
+                Status
+            </strong>
+            <br />
+            <br />
+        </li>
+        <li>
+            @Html.DropDownList("Status", new List<SelectListItem>{ new SelectListItem{ Text="Pending", Value="Pending"},
+           new SelectListItem{ Text="Process", Value="Process"} })
+        </li>
+    </ul>
+</div>
+<div class="navbar navbar-right ">
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="@Url.Action("Index","Employee")" title="Settings" class="links">
+                <img src="@Url.Content("~/images/SettingsLogo.png")" height="35" width="35">
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Employee")" title="Profile" class="links">
+                <img src="@Url.Content("~/images/ProfileLogo.png")" height="35" width="35">
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Employee")" title="LogOut" class="links">
+                <img src="@Url.Content("~/images/LogOut.png")" height="35" width="35">
+            </a>
+        </li>
+    </ul>
+</div>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Assessor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+            <td>
+                @Html.DropDownList("Assessor", new List<SelectListItem>{ new SelectListItem{ Text="Assessor1", Value="Assessor1"},
+                     new SelectListItem{ Text="Assessor2", Value="Assessor2"} }, "-- Select --")
+            </td>
+            <td>
+                @Html.ActionLink("Assign", "Edit", "Customer")
+            </td>
+        </tr>
+        @*@foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                 <td class="edit">
+                    @Html.ActionLink("Edit", "Edit", "Customer")
+                </td>
+                <td class="update"> @Html.ActionLink("Update", "update", "Customer")</td>
+                </tr>
+            }*@
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Assured Insurance</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+   
+</head>
+<body background-color="pink">
+    <table style="background-color:coral">
+        <tr>
+
+            <td class="form-group col-md-3">
+
+                <img src="~/Images/insu.jpg" height="150" width="300" />
+            </td>
+            <td class="form-group col-md-2"></td>
+            <td class="form-group col-md-7">
+                <h1><b>Assured Insurance</b></h1>
+            </td>
+
+
+        </tr>
+    </table>
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Assured Insurance", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Register", "Registration", "Policy")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("FAQ", "Faq", "Policy")</li>
+            </ul>
+        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <p>&copy; @DateTime.Now.Year - Assured Insurance</p>
+                <p style="text-align:right">You're in good Hands with Assure Insurance</p>
+            </div>
+        </footer>
+    </div>
+   </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+﻿@model AutoClaim.Models.Employee
+@{
+    ViewBag.Title = "Assessor";
+    Layout = "~/Views/Shared/_LayoutOfficer.cshtml";
+}
+@*<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+    </head>*@
+<hr />
+<h2>Welcome Assessor</h2>
+<hr />
+<div class="navbar navbar-right ">
+    <ul class="nav navbar-nav">
+        <li>
+            @Html.ActionLink("Settings", "Home", "Employee")
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="@Url.Action("Home","Employee")" title="Profile" class="links">
+                    <img src="@Url.Content("~/Images/profile.png")" height="40" width="40">
+                </a>
+            </div>
+        </li>
+        <li>
+            @Html.ActionLink("Sign Out", "Home", "Employee")
+        </li>
+    </ul>
+</div>
+<table id="example" align="left" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+            <td class="edit">
+            @Html.ActionLink("Edit", "Edit", "Customer")</td>
+            <td class="update"> @Html.ActionLink("Update", "update", "Customer")</td>
+        </tr>
+        <tr>
+            <td>Cherishma Doma</td>
+            <td>PAT</td>
+            <td>Cognizant</td>
+            <td>21</td>
+            <td>2019/02/09</td>
+            <td>$450,800</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Assured Insurance</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="form-group">
+        <table style="background-color:ActiveBorder" align="center">
+            <tr>
+                <td class="form-group col-md-3">
+                    <img src="~/images/Assure.jpg" height="120" width="250" />
+                </td>
+                <td class="form-group col-md-2"></td>
+                <td class="form-group col-md-7">
+                    <h1><b>Assured Insurance</b></h1>
+                </td>
+            </tr>
+        </table>
+        <div class="container body-content">
+            @RenderBody()
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+            <footer align="middle">
+                <p>&copy;Copyright 2014-19, AIS Assure Insurance . All Rights Reserved.</p>
+            </footer>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
+

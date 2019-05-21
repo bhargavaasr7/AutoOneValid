@@ -1,0 +1,42 @@
+﻿
+    @{
+        ViewBag.Title = "Faq";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <h2><b>FAQs</b></h2>
+<div>
+        <label for="exampleInputEmail1">Display</label> 
+    </div>
+        <div class="editor-field col-md-12">
+        @Html.DropDownList("Faq", new List<SelectListItem>{
+         new SelectListItem{  Text="Do I Have to File a Police Report After an Accident?"},
+         new SelectListItem{  Text="Do I Have to Pay for an At-Fault Claim Myself?"},
+         new SelectListItem{  Text="What Do I Do After a Total Loss Accident?"},
+         new SelectListItem{  Text="What If I Have Multiple Insurance Claims?"},
+          new SelectListItem{  Text="Others"},
+           }, "-- Select --")
+            </div>
+         
+ 
+
+
+   
+
+   
+    <div class="form-row">
+            <label for="exampleInputEmail1">Request</label>
+       
+        </div>
+<div>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="You Type Here...">
+
+        </div>
+        
+   
+    <button type="button" class="btn btn-primary">SEND</button>
+
+
+
+   

@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "ClaimOfficer";
+    Layout = "~/Views/Shared/_LayoutOfficer.cshtml";
+}
+<h2>Welcome ClaimOfficer</h2>
+<hr />
+<div class="navbar navbar-left">
+    <ul class="nav navbar-nav">
+        <li style="color:brown">
+            Status
+            <br />
+            <br />
+        </li>
+        <li>
+              @Html.DropDownList("Status", new List<SelectListItem>{ new SelectListItem{ Text="Pending", Value="Pending"},
+             new SelectListItem{ Text="Process", Value="Process"} })
+        </li>
+    </ul>
+</div>
+<div class="navbar navbar-right ">
+    <ul class="nav navbar-nav">
+        <li>
+            @Html.ActionLink("Settings", "Home", "Employee")
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="@Url.Action("Home","Employee")" title="Profile" class="links">
+                    <img src="@Url.Content("~/Images/profile.png")" height="40" width="40">
+                </a>
+            </div>
+        </li>
+        <li>
+            @Html.ActionLink("Sign Out", "Home", "Employee")
+        </li>
+    </ul>
+</div>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Assessor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+            <td>
+                @Html.DropDownList("Assessor", new List<SelectListItem>{ new SelectListItem{ Text="Assessor1", Value="Assessor1"},
+                     new SelectListItem{ Text="Assessor2", Value="Assessor2"} }, "-- Select --")
+             </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model AutoClaim.Models.RegisteredUser
+@{
+    ViewBag.Title = "UserLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>UserLogin</h1>
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(r => r.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(r => r.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(r => r.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(r => r.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(r => r.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>
+                <input type="checkbox" name="Rememberme " value="Remember me">Remember Me
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Login" class="btn btn-primary" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Registerforlogin" class="btn bg-primary" />
+
+        </div>
+    </div>
+</div>
+

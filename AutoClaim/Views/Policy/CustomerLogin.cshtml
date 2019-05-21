@@ -1,0 +1,35 @@
+﻿@model AutoClaim.Models.Policy
+@{
+    ViewBag.Title = "CustomerLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Welcome</h2>
+<div class="form-horizontal">
+    <center>
+
+        <div class="form-group" style="width:200px">
+            @Html.ActionLink("Request Insurance", "Index", "Policy", null, new { @class = "btn btn-primary btn-large form-control  " })
+        </div>
+
+
+
+        <div class="form-group" style="width:200px">
+
+
+            @Html.ActionLink("Status claim", "Index", "Policy", null, new { @class = "btn btn-primary btn-large form-control " })
+        </div>
+
+
+
+        <div class="form-group" style="width:200px">
+            @Html.ActionLink("Apply For Other Policy", "Index", "Policy", null, new { @class = "btn btn-primary btn-large form-control  " })
+        </div>
+
+
+
+    </center>
+</div>
+   
+
