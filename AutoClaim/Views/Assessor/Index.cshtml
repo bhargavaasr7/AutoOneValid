@@ -4,13 +4,13 @@
     Layout = "~/Views/Shared/_LayoutOfficer.cshtml";
 }
 @*
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-</head>*@
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+    </head>*@
 <hr />
 <h2>Welcome Assessor</h2>
 <hr />
@@ -23,13 +23,13 @@
         </li>
         <li>
             @*<div class="dropdown">*@
-                <a href="@Url.Action("Index","Employee")" title="Profile" class="links">
-                  <img src="@Url.Content("~/images/ProfileLogo.png")" height="35" width="35"> 
-                </a>
+            <a href="@Url.Action("Index","Employee")" title="Profile" class="links">
+                <img src="@Url.Content("~/images/ProfileLogo.png")" height="35" width="35">
+            </a>
             @*</div>*@
         </li>
         <li>
-              <a href="@Url.Action("Index","Employee")" title="LogOut" class="links">
+            <a href="@Url.Action("Index","Employee")" title="LogOut" class="links">
                 <img src="@Url.Content("~/images/LogOut.png")" height="35" width="35">
             </a>
         </li>
@@ -68,25 +68,32 @@
             <td>$450,800</td>
         </tr>
         @*@foreach (var c in Model)
-        {
-            <tr>
-                <td>@c.table.columnname</td>
-                <td>@c.table.columnname</td>
-                <td>@c.table.columnname</td>
-                <td>@c.table.columnname</td>
-                <td>@c.table.columnname</td>
-                <td>@c.table.columnname</td>
-             <td class="edit">
-                @Html.ActionLink("Edit", "Edit", "Customer")
-            </td>
-            <td class="update"> @Html.ActionLink("Update", "update", "Customer")</td>
-            </tr>
-        }*@
+            {
+                <tr>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                    <td>@c.table.columnname</td>
+                 <td class="edit">
+                    @Html.ActionLink("Edit", "Edit", "Customer")
+                </td>
+                <td class="update"> @Html.ActionLink("Update", "update", "Customer")</td>
+                </tr>
+            }*@
     </tbody>
 </table>
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
-</script>
+@section Scripts {
+    <link href="~/Content/DataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap4.js"></script>
+    <script>
+          $(document).ready(function () {
+            $("#example").DataTable();
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
